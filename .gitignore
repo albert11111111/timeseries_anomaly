@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+timeseries_env/
+timeseries_anomaly/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 排除大文件但保留test_results和dataset
+*.xlsx
+*.csv
+*.pkl
+*.npz
+*.h5
+*.hdf5
+
+# 排除模型检查点文件
+*.pth
+*.pt
+*.ckpt
+*.model
+
+# 排除原始数据集但保留处理后的数据
+all_datasets/
+Time-Series-Library/dataset/SMAP/
+Time-Series-Library/dataset/MSL/
+Time-Series-Library/dataset/PSM/
+Time-Series-Library/dataset/SMD/
+Time-Series-Library/dataset/SWAT/
+
+# 排除检查点目录
+Time-Series-Library/checkpoints/
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# PromptX相关
+.promptx/
