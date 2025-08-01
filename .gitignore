@@ -34,7 +34,6 @@ timeseries_anomaly/
 *.swo
 
 # 排除大文件但保留test_results和dataset
-*.xlsx
 *.csv
 *.pkl
 *.npz
