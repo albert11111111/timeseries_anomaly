@@ -13,7 +13,7 @@ def get_feature_num():
 
 def check_model_results(model_name):
     """检查模型是否已完成训练"""
-    result_pattern = f"Time-Series-Library/results/anomaly_detection/LIGHT_SMAP_{model_name}_*"
+    result_pattern = f"Time-Series-Library/test_results/anomaly_detection_LIGHT_SMAP_{model_name}_*"
     result_dirs = glob.glob(result_pattern)
     
     if result_dirs:
@@ -115,18 +115,18 @@ def main():
     if len(completed_models) >= 1:  # 至少有一个模型完成
         print("\n=== 开始处理结果 ===")
         try:
-            # 导入并运行单独模型评估
+            # 导入并运行模型评估
             import sys
             sys.path.append('.')
-            from process_results_individual import compare_all_models
+            from correct_all_models import correct_time_point_aggregation
             
-            best_model, best_score, all_results = compare_all_models()
-            if best_model:
-                print(f"异常检测完成！最佳模型: {best_model}, 得分: {best_score}")
-            else:
-                print("结果处理失败")
+            print("开始评估所有模型...")
+            correct_time_point_aggregation()
+            print("异常检测完成！")
         except Exception as e:
             print(f"结果处理出错: {e}")
+            import traceback
+            traceback.print_exc()
     else:
         print("没有模型训练成功，无法处理结果")
 
